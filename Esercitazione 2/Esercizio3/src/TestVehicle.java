@@ -1,36 +1,31 @@
 public class TestVehicle {
     public static void main(String[] args) {
-        Car[] c = new Car[3];
-        Motorcycle[] m = new Motorcycle[3];
+        Vehicle[] v = new Vehicle[6];
 
 
-        c[0] = new Car("AS123", "Ford", 130003, false, "WAGON");
+        v[0] = new Car("AS123", "Ford", 130003, false, "WAGON");
 
-        c[1] = new Car("DS1001", "Jeep", 3214, true, "SUV");
+        v[1] = new Car("DS1001", "Jeep", 3214, true, "SUV");
 
-        c[2] = new Car("PQ7654", "Ferrari", 9099, true, "SPORT");
+        v[2] = new Car("PQ7654", "Ferrari", 9099, true, "SPORT");
 
 
-        m[0] = new Motorcycle("FD3234", "Honda", 130003, false, 190);
+        v[3] = new Motorcycle("FD3234", "Honda", 130003, false, 190);
 
-        m[1] = new Motorcycle("DX3421", "Kawasaki", 3214, false, 80);
+        v[4] = new Motorcycle("DX3421", "Kawasaki", 3214, false, 80);
 
-        m[2] = new Motorcycle("DSQ324", "Hyundai", 9099, true, 40);
+        v[5] = new Motorcycle("DSQ324", "Hyundai", 9099, true, 40);
 
-        print(c, m);
+        print(v);
     }
 
-    public static void print(Car[] c, Motorcycle m[]) {
+    public static void print(Vehicle v[]) {
         System.out.println("Le targhe dei veicoli guasti sono: ");
-        for (int i = 0; i < c.length; i++) {
-            if (c[i].isGuasto())
-                System.out.println(c[i].getTarga());
+        for (int i = 0; i < v.length; i++) {
+            if (v[i].isGuasto())
+                System.out.println(v[i].getTarga());
         }
-        for (int i = 0; i < m.length; i++) {
-            if (m[i].isGuasto()) {
-                System.out.println(m[i].getTarga());
-            }
+
         }
 
     }
-}
