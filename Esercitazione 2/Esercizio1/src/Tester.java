@@ -5,7 +5,7 @@ public class Tester {
     public static void main(String[] args) {
         Stagista[] s = new Stagista[3];
 
-        s[0] = new Stagista("RSSNDR95A01F205V", "Rossi", "Andrea", 20123, "Milano",
+        s[0] = new Stagista("RSSNDR00A01F205V", "Rossi", "Andrea", 20123, "Milano",
                 13, 9999);
 
         s[1] = new Stagista("NRENNA90E41F704U", "Nero", "Anna", 20900, "Monza",

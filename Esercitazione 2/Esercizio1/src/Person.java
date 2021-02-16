@@ -67,7 +67,9 @@ public class Person {
     }
 
     public int getBirthyear() {
-        int x = cf.charAt(6)+cf.charAt(7);
+     try{
+        int x= Character.getNumericValue(cf.charAt(6))+ Character.getNumericValue(cf.charAt(7));
+
         String y;
         if (x>4){
             y="19" + cf.charAt(6)+ cf.charAt(7);
@@ -75,6 +77,8 @@ public class Person {
             y ="20"+ cf.charAt(6)+ cf.charAt(7);
 
         birthyear = Integer.parseInt(y);
+     }catch (Exception e){System.out.println("Errore mettere un codice fiscale valido.");}
+
         return birthyear;
     }
 }
