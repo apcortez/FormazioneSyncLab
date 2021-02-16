@@ -30,7 +30,7 @@ public class Employee extends Person {
     }
 
     public boolean gainsMore(Employee e){
-        if(getStipendio()>e.stipendio){
+        if(getStipendio()>0 && getStipendio()>e.stipendio){
             return true;
         } else return false;
     }
