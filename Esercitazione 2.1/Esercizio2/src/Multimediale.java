@@ -18,8 +18,6 @@ abstract class Multimediale {
         this.titolo = titolo;
     }
 
-    public abstract void play();
 
-    public abstract void show();
 }
 

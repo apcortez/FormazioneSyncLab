@@ -1,4 +1,4 @@
-public class Audio extends Multimediale implements oggettovolume, play {
+public class Audio extends Multimediale implements oggettovolume{
     private int durata;
     private int volume;
 
@@ -40,10 +40,6 @@ public class Audio extends Multimediale implements oggettovolume, play {
         }catch (Exception e){
             System.out.println("Data error!");
         }
-    }
-
-    public void show() {
-
     }
 
     @Override

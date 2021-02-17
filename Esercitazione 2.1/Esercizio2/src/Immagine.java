@@ -1,4 +1,4 @@
-public class Immagine extends Multimediale implements oggettoluminosità, show{
+public class Immagine extends Multimediale implements oggettoluminosità{
     private int luminosità;
 
     public Immagine(String titolo,String tipo, int luminosità) {
@@ -7,10 +7,6 @@ public class Immagine extends Multimediale implements oggettoluminosità, show{
     }
 
 
-    @Override
-    public void play() {
-
-    }
 
     public void show() {
         try {
