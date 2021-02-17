@@ -1,14 +1,14 @@
-public class Multimediale {
-    private String titolo;
-    private String tipo;
+abstract class Multimediale {
+    protected String titolo;
+    protected String tipo;
 
-    public Multimediale(String titolo){
+
+    public Multimediale(String titolo, String tipo){
         this.titolo = titolo;
+        this.tipo = tipo;
     }
 
-    public Multimediale() {
 
-    }
 
     public String getTitolo() {
         return titolo;
@@ -18,19 +18,8 @@ public class Multimediale {
         this.titolo = titolo;
     }
 
-    public void setTipo(String tipo) {
-    this.tipo = tipo;
+    public abstract void play();
 
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void show() {
-    }
-
-    public void play() {
-    }
+    public abstract void show();
 }
 

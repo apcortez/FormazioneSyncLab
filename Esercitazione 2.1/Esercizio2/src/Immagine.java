@@ -1,32 +1,21 @@
-public class Immagine extends Multimediale{
+public class Immagine extends Multimediale implements oggettoluminosità, show{
     private int luminosità;
-    public Immagine(String titolo,int luminosità){
-        super(titolo);
+
+    public Immagine(String titolo,String tipo, int luminosità) {
+        super(titolo,tipo);
         this.luminosità = luminosità;
     }
 
-    public int getLuminosità() {
-        return luminosità;
-    }
 
-    public void setLuminosità(int luminosità) {
-        this.luminosità = luminosità;
-    }
+    @Override
+    public void play() {
 
-    public void brighter(){
-        setLuminosità(luminosità--);
-        System.out.println("Luminosità alzata al "+ getLuminosità());
-    }
-
-    public void darker(){
-        setLuminosità(luminosità--);
-        System.out.println("Luminosità abbassata al "+getLuminosità());
     }
 
     public void show() {
         try {
             if (luminosità > 0) {
-                System.out.print(getTitolo());
+                System.out.print(titolo);
                 for (int i = 0; i < luminosità; i++) {
                     System.out.print("*");
 
@@ -36,5 +25,18 @@ public class Immagine extends Multimediale{
         } catch (Exception e) {
             System.out.println("Data error!");
         }
+    }
+
+    @Override
+    public void brighter(int n) {
+        luminosità = luminosità + n;
+        System.out.println("Luminosità alzata al "+ luminosità);
+    }
+
+    @Override
+    public void darker(int n) {
+        luminosità = luminosità -n;
+        System.out.println("Luminosità abbassata al "+ luminosità);
+
     }
 }

@@ -1,9 +1,9 @@
-public class Audio extends Multimediale{
+public class Audio extends Multimediale implements oggettovolume, play {
     private int durata;
     private int volume;
 
-    public Audio(String titolo, int durata, int volume){
-        super(titolo);
+    public Audio(String titolo, String tipo,int durata, int volume){
+        super(titolo,tipo);
         this.durata = durata;
         this.volume = volume;
     }
@@ -41,12 +41,21 @@ public class Audio extends Multimediale{
             System.out.println("Data error!");
         }
     }
-    public void louder(){
-        setVolume(volume++);
-        System.out.println("Volume alzato: "+getVolume());
+
+    public void show() {
+
     }
-    public void weaker(){
-        setVolume(volume--);
-        System.out.println("Volume diminuito: "+getVolume());
+
+    @Override
+    public void louder(int n) {
+        volume = volume+n;
+        System.out.println("Volume alzato al "+volume);
+    }
+
+    @Override
+    public void weaker(int n) {
+        volume = volume -n;
+        System.out.println("Volume abbassato al "+ volume);
+
     }
 }

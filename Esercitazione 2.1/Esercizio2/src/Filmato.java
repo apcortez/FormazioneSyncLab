@@ -1,7 +1,7 @@
-public class Filmato extends Audio{
+public class Filmato extends Audio implements oggettoluminosità{
     private int luminosità;
-    public Filmato(String titolo, int durata, int volume,int luminosità){
-        super(titolo,durata,volume);
+    public Filmato(String titolo, String tipo,int durata, int volume,int luminosità){
+        super(titolo,tipo,durata,volume);
         this.luminosità = luminosità;
     }
 
@@ -11,16 +11,6 @@ public class Filmato extends Audio{
 
     public void setLuminosità(int luminosità) {
         this.luminosità = luminosità;
-    }
-
-    public void brighter(){
-        setLuminosità(luminosità--);
-        System.out.println("Luminosità alzata al "+ getLuminosità());
-    }
-
-    public void darker(){
-        setLuminosità(luminosità--);
-        System.out.println("Luminosità abbassata al "+getLuminosità());
     }
 
     @Override
@@ -46,5 +36,17 @@ public class Filmato extends Audio{
         }
     }
 
+    @Override
+    public void brighter(int n) {
+        luminosità = luminosità + n;
+        System.out.println("Luminosità alzata al "+ luminosità);
     }
+
+    @Override
+    public void darker(int n) {
+        luminosità = luminosità -n;
+        System.out.println("Luminosità abbassata al "+ luminosità);
+
+    }
+}
 

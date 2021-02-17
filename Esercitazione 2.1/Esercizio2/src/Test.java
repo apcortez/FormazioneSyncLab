@@ -13,33 +13,31 @@ public class Test {
             System.out.println("Titolo:");
             String titolo = input.next();
 
-                System.out.println("Tipo file: immagine/audio/film");
-                String tipo = input.next();
-
+                System.out.println("Tipo file:\n1 - Immagine \n2 - Audio \n3 - Filmato");
+                int tipo = input.nextInt();
                 switch (tipo) {
-                    case "immagine":
+                    case 1:
                         System.out.println("Luminosità: ");
                         luminosità = input.nextInt();
-                        m[i] = new Immagine(titolo, luminosità);
-
+                        m[i] = new Immagine(titolo,"immagine", luminosità);
                         break;
-                    case "audio":
+                    case 2:
                         System.out.println("Durata: ");
                         durata = input.nextInt();
                         System.out.println("Volume: ");
                         volume = input.nextInt();
-                        m[i] = new Audio(titolo, durata, volume);
+                        m[i] = new Audio(titolo, "audio",durata, volume);
                         break;
-                    case "film":
+                    case 3:
                         System.out.println("Durata: ");
                         durata = input.nextInt();
                         System.out.println("Volume: ");
                         volume = input.nextInt();
                         System.out.println("Luminosità: ");
                         luminosità = input.nextInt();
-                        m[i] = new Filmato(titolo, durata, volume, luminosità);
+                        m[i] = new Filmato(titolo,"filmato", durata, volume, luminosità);
                         break;
-                    default: System.out.println("File non riconosciuto ma verrà memorizzato di default");
+                    default: if(tipo ==0 || tipo>3)System.out.println("File non riconosciuto ma verrà memorizzato di default");
                              break;
                 }
             }
@@ -52,11 +50,19 @@ public class Test {
             System.out.println("------Memorizzazione completata-------");
       int in =0;
 
-          do {
+          do {String r;
               System.out.println("Quale file vuoi eseguire? Inserire da 1 a 5 oppure 0 per finire");
               in = input.nextInt();
-              m[in - 1].play();
-              m[in - 1].show();
+              switch (m[in-1].tipo){
+                  case "immagine": m[in-1].show();
+                                   System.out.println("Vuoi regolare la luminosità? si/no");
+                                   break;
+                  case "audio":
+                  case "filmato":
+                                 m[in-1].play();
+                                 break;
+              }
+
 
 
           }while(in !=0 && in<=5);
