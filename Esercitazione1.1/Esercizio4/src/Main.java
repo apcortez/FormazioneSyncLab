@@ -1,10 +1,10 @@
-import java.util.Scanner;
+import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Costruiamo la matrice");
         System.out.println("Numero di righe: ");
-        int righe =input.nextInt();
+      try{  int righe =input.nextInt();
         System.out.println("Numero di colonne: ");
         int colonne =input.nextInt();
         int[][] A = new int[righe][colonne];
@@ -36,5 +36,8 @@ public class Main {
         }
 
 
+    }catch (InputMismatchException e){
+          System.out.println("Errore: input inserito non valido");
+      }
     }
 }
