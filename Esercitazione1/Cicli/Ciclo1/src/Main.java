@@ -1,10 +1,10 @@
 
-import java.util.Scanner;
+import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Dammi quanti numeri vuoi ispezionare: ");
-        int dim =input.nextInt();
+       try{ int dim =input.nextInt();
         int contatore =0;
         int numero;
         System.out.println("Dammi i numeri interi da ispezionare: ");
@@ -19,7 +19,9 @@ public class Main {
         if(contatore == dim){
             System.out.println("Tutti positivi e pari");
         } else System.out.println("NO");
-    }
+    }catch (InputMismatchException e){
+           System.out.println("Errore input: non hai messo un numero!");
+       }}
 }
 
 
