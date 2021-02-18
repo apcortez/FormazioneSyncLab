@@ -1,8 +1,9 @@
-import java.util.Scanner;
+import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Quant'è la dimenstione dell'array?");
+        System.out.println("Quant'è la dimensione dell'array?");
+    try{
         int dim =input.nextInt();
         int[] array=new int[dim];
         int[] arrayOrdinato= new int[dim];
@@ -27,6 +28,9 @@ public class Main {
         for(int z: arrayOrdinato){
             System.out.println(z+"; ");
         }
+    }catch (InputMismatchException e){
+        System.out.println("Errore: Input inserito non valido");
+    }
     }
 }
 
