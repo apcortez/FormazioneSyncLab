@@ -50,32 +50,36 @@ public class Test {
             System.out.println("------Memorizzazione completata-------");
       int in =0;
 
-          do {
+          do {int r;
               System.out.println("Quale file vuoi eseguire? Inserire da 1 a 5 oppure 0 per finire");
               in = input.nextInt();
               switch (m[in-1].tipo){
                   case "immagine": Immagine i = (Immagine) m[in-1];
                                    i.show();
                                    System.out.println("Luminosità? \n1 - Aumentare \n0 - Diminuire");
-                                   if(input.nextInt() ==1){ i.brighter(1);}
-                                   if(input.nextInt() ==0){i.darker(1);}
+                                   r = input.nextInt();
+                                   if(r ==1){ i.brighter(1);}
+                                   if(r ==0){i.darker(1);}
                                    i.show();
                                    break;
                   case "audio":    Audio a = (Audio)m[in-1];
                                    a.play();
                                    System.out.println("Volume? \n1 - Aumentare \n0 - Diminuire");
-                                   if(input.nextInt() ==1){a.louder(1);}
-                                   if(input.nextInt() ==0){a.weaker(1);}
+                                   r = input.nextInt();
+                                   if(r ==1){a.louder(1);}
+                                   if(r ==0){a.weaker(1);}
                                    a.play();
                                    break;
                   case "filmato":  Filmato f = (Filmato) m[in-1];
                                    f.play();
                                    System.out.println("Luminosità? \n1 - Aumentare \n0 - Diminuire");
-                                   if(input.nextInt() ==1){f.brighter(luminosità);}
-                                   if(input.nextInt() ==0){f.darker(luminosità);}
+                                   r = input.nextInt();
+                                   if(r ==1){f.brighter(1);}
+                                   if(r ==0){f.darker(1);}
                                    System.out.println("Volume? \n1 - Aumentare \n0 - Diminuire");
-                                   if(input.nextInt() ==1){f.louder(1);}
-                                   if(input.nextInt() ==0){f.weaker(1);}
+                                   r = input.nextInt();
+                                   if(r==1){f.louder(1);}
+                                   if(r ==0){f.weaker(1);}
                                    f.play();
                                    break;
               }
