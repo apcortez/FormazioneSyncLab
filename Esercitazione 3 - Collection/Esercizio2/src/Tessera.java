@@ -28,13 +28,4 @@ public class Tessera{
         this.credito = credito;
     }
 
-    public boolean equals(Tessera tessera) {
-        if(this.codice == tessera.getCodice())
-            return true;
-        return false;
-    }
-
-    public String toString(){
-        return "Codice: " + this.codice + " Credito : " + this.credito;
-    }
 }
