@@ -29,7 +29,7 @@ public class TestDistributore {
                         lattine = input.nextInt();
                         d.aggiornaColonna(colonna, d.getBevandaFromCodice(i), lattine);
                         break;
-                case 3: d.visualizzaLattine();
+                case 3: d.visualizzaLattine2();
                         System.out.println("Inserisci il codice della bevanda per visualizzare il numero di lattine disponibili: ");
                         i = input.next().toUpperCase().charAt(0);
                         System.out.println(d.getBevandaFromCodice(i).getNome() + ": " + d.lattineDisponibili(i));

@@ -15,9 +15,9 @@ public class Distributore {
 
         }
 
-    public void visualizza(){
-        for(Character i: elenco.keySet()){
-            System.out.println(elenco.get(i));
+    public void visualizzaLattine2(){
+        for(Integer i: colonne.keySet()){
+            System.out.println(colonne.get(i));
         }
     }
     public void visualizzaLattine() {
